@@ -1,4 +1,7 @@
 var excercise=6;
+function logData(data) {
+	console.log(data);
+}
 switch(excercise) {
 	//Arguments
 	case 2:
@@ -63,6 +66,19 @@ switch(excercise) {
 		});
 		break;
 	}
-	
+	//List dir using module
+	case 6:
+	{
+		var folderfilter=require('./folderfilter');
+		folderfilter.filterContents(process.argv[2],
+			process.argv[3],
+			function filterResults(err, filteredContents) {
+				if(err)
+					return console.error('Error encountered:',err);
+				filteredContents.forEach(logData);
+			}
+		);
+		break;
+	}
 }
 
