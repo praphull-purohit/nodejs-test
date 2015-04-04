@@ -1,4 +1,4 @@
-var excercise=10;
+var excercise=11;
 function logData(data) {
 	console.log(data);
 }
@@ -152,6 +152,12 @@ switch(excercise) {
 	case 10: {
 		var ts=require('./TimeServer');
 		ts.startServer(parseInt(process.argv[2]));
+		break;
+	}
+	//File Server:
+	case 11: {
+		var fs=require('./FileServer');
+		fs.startServer(parseInt(process.argv[2]),process.argv[3]);
 		break;
 	}
 }
