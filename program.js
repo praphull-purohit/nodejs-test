@@ -1,4 +1,4 @@
-var excercise=11;
+var excercise=12;
 function logData(data) {
 	console.log(data);
 }
@@ -158,6 +158,18 @@ switch(excercise) {
 	case 11: {
 		var fs=require('./FileServer');
 		fs.startServer(parseInt(process.argv[2]),process.argv[3]);
+		break;
+	}
+	//HTTP Server
+	case 12: {
+		var httpServer=require('./HttpServer');
+		httpServer.startServer(parseInt(process.argv[2]));
+		break;
+	}
+	//JSON API Server
+	case 12: {
+		var jsonServer=require('./JsonApiServer');
+		jsonServer.startServer(parseInt(process.argv[2]));
 		break;
 	}
 }
